@@ -31,6 +31,7 @@ class UserCreateUpdateSerializer(ModelSerializer):
                                  slug_field='name',
                                  queryset=Location.objects.all()
                                  )
+    age = IntegerField(required=False)
 
     def is_valid(self, *, raise_exception=False):
         self._locations = self.initial_data.pop("locations", [])
